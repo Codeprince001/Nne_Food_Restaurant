@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: rgb(27, 27, 53);
+            font-family: 'Poppins';
+        }
+
+        
+        a {
+            text-decoration: none;
+         }
+        
+        .container {
+            width: 300px;
+            margin: 1rem auto;
+            background: whitesmoke;
+            border-radius: 20px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: .4rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .sign-up {
+            font-size: 1.5rem;
+            text-align: center;
+            padding-top: 1rem;
+        }
+
+        .text-sm {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        form {
+            margin: 1rem;
+        }
+
+        label {
+            line-height: 1.2;
+            margin-top: 2rem;
+        }
+
+        .form-detail {
+            margin-bottom: .5rem;
+        }
+
+        .sign-in-btn {
+            background-color: #2e916b;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            padding: .6em 1rem;
+            margin-top: 10px;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #37a08e;
+        }
+
+        .sign-in-btn a {
+            color: #fff;
+        }
+
+        .foot-note {
+            font-size: .6rem;
+            text-align: center;
+            padding: .7rem;
+        }
+
+        .foot-note a {
+            word-wrap: nowrap;
+        }
+
+        .footer {
+            margin-top: 1px;
+            text-align: center;
+            font-size: .8rem;
+            color: #fff;
+        }
+
+        .footer a {
+            color: #49c1a2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="head-text">
+                <div class="sign-up">Sign Up</div>
+                <div class="text-sm">It's free and only take a minute</div>
+            </div>
+                <form action="" class="form">
+                <div class="form-detail">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" name="last_name" id="full_name">
+                </div>
+                <div class="last_name">
+                    <label for="form-detail">Last Name</label>
+                    <input type="text" name="last_name" id="last_name">
+                </div>
+
+                <div class="form-detail">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="form-detail">
+                    <label for="pword_1">Password</label>
+                    <input type="password" name="pword" id="pword">
+                </div>
+
+                <div class="form-detail">
+                    <label for="pword_2">Confirm Password</label>
+                    <input type="pword" name="pword" id="pword">
+                </div>
+                <button class="btn sign-in-btn"><a href="http://sign_up" target="_blank" rel="noopener noreferrer">Sign up</a></button>
+
+                <div class="foot-note">by clicking the sign up button you agree to our  <a href="#">Terms and Condition</a> and <a href="#">privacy policy</a></div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="p">Already have an account? <a href="http://">Login Here</a></div>
+    </footer>
+</body>
+</html>

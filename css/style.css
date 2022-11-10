@@ -11,6 +11,7 @@
     --body-bg: #e8e5ce;
     --primary-color: #73034c;
 
+
     /* font-sizes */
     --max-font: 3rem;
     --mid-font: 2rem;
@@ -19,6 +20,7 @@
     /* color */
     --light-color: #fff;
     --dark-color: #000;
+    --hover-bg: #4c0332;
 }
 
 html,body {
@@ -33,6 +35,7 @@ html,body {
 a {
     text-decoration: none;
     cursor: pointer;
+    color: var(--body-bg);
 }
 
 ol, ul {
@@ -52,6 +55,35 @@ img {
 .container {
     width: 90%;
     margin: 0 auto;
+}
+
+
+
+/* .no-wrap {
+    white-space: nowrap;
+} */
+
+.btn {
+    font-size: 1.2rem;
+    width: 150px;
+    border-radius: 20px;
+    border: none;
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: white;
+    padding: .5rem .5rem;
+    text-transform: uppercase;
+    margin: 1rem auto;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.box-a .btn:hover {
+    background-color: #73034c71;
+}
+
+.current {
+  background-color: var(--hover-bg);
 }
 
 /* Header */
@@ -104,6 +136,7 @@ img {
     letter-spacing: .1rem;
     font-size: 1rem;
     padding: 1rem 1rem;
+    margin-right: 2px;
 }
 
 
@@ -123,14 +156,16 @@ img {
 }
 
 .box-a {
-    border-bottom: 1px solid rgb(183, 181, 181);
+    /* border-bottom: 1px solid rgb(183, 181, 181); */
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.76) 20.54%,
     rgba(0, 0, 0, 0.192) 85.23%,
     rgba(0, 0, 0, 0.786) 100%, rgba(0, 0, 0, 0.815) 100%), url("/img/chef_2.jpg") no-repeat center bottom/cover;
     /* background-size: cover; */
+    height: 100vh;
+    /* min-height:600px; */
 }
 
-.box-a .box-text {
+.box-a .text-box {
     font-weight: 900;
     font-size: var(--max-font);
     color: var(--light-color);
@@ -138,9 +173,10 @@ img {
     text-align: center;
     display: grid;
     place-content: center;
-    padding: 5rem;
+    /* padding: 5rem; */
     height: 100vh;
     cursor: pointer;
+    
 }
 
 .heading {
@@ -161,15 +197,15 @@ img {
 .col-2 img {
     flex: 1;
     width: 100%;
-    transition: 1s ease-in-out;
+    /* transition: 1s ease-in-out; */
 }
 
 .box-b {
     margin: 2rem 0;
 }
 
-.box-b .box-text {
-    font-size: 2rem;
+.box-b .text-box {
+    font-size: 1.3rem;
     text-transform:capitalize;
     font-weight: 500;
     padding: 2em ;
@@ -209,14 +245,15 @@ img {
 
 /* specials  */
 .specials {
-    margin-top: 1.5em;
+    margin-top: 2em;
 }
 
 .foods {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin: .5rem 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
 }
 
 .foods img {
@@ -267,16 +304,6 @@ img {
     white-space: nowrap;
 }
 
-.banner {
-    margin: 1rem 0;
-    text-align: center;
-}
-
-.banner img {
-    margin: 2rem;
-    width: 100%;
-}
-
 .hamburger {
     position: absolute;
     /* left: 100%; */
@@ -285,6 +312,10 @@ img {
 
 @media (max-width: 768px) {
 
+    .hidden {
+        display: none;
+    }
+
     .header {
         position: relative, sticky;
     }
@@ -292,34 +323,47 @@ img {
         padding: .5rem 0;
     }
 
-    .box-a .box-text {
-        font-size: 32px;
+    .box-a .text-box {
+        font-size: 1.5em;
+        max-width: 100%;
     }
 
-    .col-2 img{
-        display: none;
+    .box-b {
+        margin: 0;
+    }
+
+    .box-b .text-box {
+        font-size: 1rem;
+    }
+
+    .col-2{
+        flex-direction: column;
     }
 
     .delivery-note {
-        display: none;
-    }
-
-    .box-b .box-text {
-        font-size: 1rem;
+        /* display: none; */
+        text-align: justify;
     }
 
     .foods {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        margin: .5rem 1rem;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1em;
+        margin: 2em 2rem;
+        padding: 0 2em;
     }
 
     .dishes img {
         height: 150px;
         width: 100%;
+        /* border: 2px solid chocolate; */
+        /* max-width: 100px; */
     }
 
+    .dish-name {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
    .hamburger {
     /* display: block; */
     position: absolute;
@@ -347,20 +391,53 @@ img {
     display: block;
     background: var(--primary-color);
     top: 70px;
-    right: 100%;
+    right: 10px;
     cursor: pointer;
     flex-direction: column;
-    transition: 500ms ease-in;
+    transition: 500ms ease-out;
+    transform: scale(0);
   }
 
   .list.active {
-    right: 10px;
+    /* right: 10px; */
+    transform: scale(1);
   }
 }
 
-@media (max-width: 1440px) {
-    .box-b .box-text {
+@media (min-width: 382px) and (max-width: 768px) {
+    .foods {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1em auto;
+    }
+
+    .dish-name {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .foods {
+        margin:auto;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 960px){
+    .box-b {
+        margin: 0;
+    }
+
+    .box-b .text-box {
+        font-size: 1rem;
+    }
+
+    .col-2{
+        flex-direction: column-reverse;
+    }
+}
+
+/* @media (max-width: 1440px) {
+    .box-b .text-box {
         font-size: 1.3rem;
         margin: none;
     }
-}
+} */
