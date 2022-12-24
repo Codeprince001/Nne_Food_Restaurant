@@ -52,11 +52,14 @@ img {
     width: 100%;
 }
 
+footer {
+  bottom: 0;
+}
+
 .container {
     width: 90%;
     margin: 0 auto;
 }
-
 
 
 /* .no-wrap {
@@ -106,6 +109,7 @@ img {
 }
 
 .nav-bar {
+  /* width: 100vw; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,7 +140,7 @@ img {
     letter-spacing: .1rem;
     font-size: 1rem;
     padding: 1rem 1rem;
-    margin-right: 2px;
+    /* margin-right: 2px; */
 }
 
 
